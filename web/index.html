@@ -1,0 +1,330 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%@page contentType="text/html" pageEncoding="UTF-8"%>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatitble" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Coffee Shop </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- start header -->
+    <header class="header">
+        <a href="#" class="logo">
+            <img src="img/logo.jpg" width="150" height="60">
+        </a>
+
+        <nav class="navbar">
+            <ul>
+            <li><a href="#home">home</a></li>
+            <li><a href="#menu">menu</a>
+                <ul class="dropdown">
+                    <c:forEach  var="o" items="${listc}" >
+                       <li><a href="#">${o.categoryName}</a></li>                      
+                    </c:foreach>
+                </ul>
+            </li>
+
+            <li><a href="#about">about</a></li>
+            <li><a href="#contact">contact</a></li>
+            <li><a href="login.jsp">log in</a></li>
+            <li><a href="signup.jsp">sign up</a></li>
+            </ul>
+        </nav>
+
+        <div class="icons">
+            <div class="fas fa-search" id="seach-btn"></div>
+            <div class="fas fa-shopping-cart" id="cart-btn"></div>
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+
+        <div class="search-form">
+            <input type="search" id="search-box" placeholder="search here..">
+            <label for="search-box" class="fas fa-search"></label>
+        </div>
+
+        <!-- <div class="cart-item-container">
+            <div class="cart-item">
+                <span class="fas fa-times"></span>
+                <img src="img/cart1.png">
+                <div class="content">
+                    <h3>cart item 1</h3>
+                    <div class="price">$15.99</div>
+                </div>
+            </div>
+        </div> -->
+    </header>
+
+    <!-- home start -->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>fresh coffee in the morning</h3>
+            <p>enjoy your day!</p>
+            <a href="#menu" class="btn"> get yours now</a>
+        </div>
+    </section>
+
+    <!-- menu start -->
+    <section class="menu" id="menu">
+        <h1 class="heading">
+            <div class="khungSanPham" style="border-color": #ff9c00>
+                <h5 class="tenKhung" style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);"> expresso</h5>
+                    
+                <div id="expresso" class="box-container">
+                    <div class="box">
+                        <img src="img/menu3.png">
+                            <h3>Frappuccino expresso</h3>
+                            <div class="price">$15.99 </div>
+                            <a href="#" class="btn">add to cart</a>
+                    </div>
+                
+                    <div class="box">
+                        <img src="img/menu17.webp">
+                        <h3>Espresso Con Panna</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                
+                    <div class="box">
+                        <img src="img/menu4.png">
+                        <h3>Strawberries & Cream Expresso</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+            </div>
+            <div class="khungSanPham" style="border-color": #ff9c00>
+                <h5 class="tenKhung" style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);"> latte</h5>
+                
+                <div id="latte" class="box-container">
+                    
+                    <div class="box">
+                        <img src="img/menu11.webp">
+                        <h3>Iced almond latte</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu5.webp">
+                        <h3>Latte Macchiato</h3>
+                        <div class="price">$15.99</div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu13.webp">
+                        <h3>Iced Caramel Latte & Vanilla Cream</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu18.webp">
+                        <h3>Golden Turmeric Latte</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                   <div class="box">
+                        <img src="img/menu5.png">
+                        <h3>Green Tea Latte</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu9.webp">
+                        <h3>Mocha Latte</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                </div>
+
+            <div class="khungSanPham" style="border-color": #ff9c00>
+                <h5 class="tenKhung" style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);"> Macchiatto</h5>
+                
+                <div id="Macchiatto" class="box-container">
+                    <div class="box">
+                        <img src="img/menu14.webp">
+                        <h3>Iced Caramel Macchiatto</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu6.webp">
+                        <h3>iced coconut macchiatto</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu15.webp">
+                        <h3>Vanilla Cream Cold Foam Iced Macchiatto</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+
+                    
+                </div>
+                
+            <div class="khungSanPham" style="border-color": #ff9c00>
+                <h5 class="tenKhung" style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);"> cappuccino</h5>
+                
+                <div id="cappuccino" class="box-container">
+                    
+                    <div class="box">
+                        <img src="img/menu1.png">
+                        <h3>camppuccino</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu10.webp">
+                        <h3>Iced cappuccino</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu4.webp">
+                        <h3>Marshmallow Hot Cappuccino</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                </div>
+                
+            <div class="khungSanPham" style="border-color": #ff9c00>
+                <h5 class="tenKhung" style="background-image: linear-gradient(120deg, #ff9c00 0%, #ec1f1f 50%, #ff9c00 100%);"> others</h5>
+                
+                <div id="others" class="box-container">  
+                    
+                    <div class="box">
+                        <img src="img/menu2.png">
+                        <h3>dark instant coffee</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                 
+                   
+                    <div class="box">
+                        <img src="img/menu16.webp">
+                        <h3>Vietnamese Iced Coffee</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu7.webp">
+                        <h3>Strawberry Cold Foam Iced Coffee</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+
+                    <div class="box">
+                        <img src="img/menu8.webp">
+                        <h3>Iced Honey Oat Coffee</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu6.png">
+                        <h3>Iced Shaken Hibiscus Tea</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                    
+                    <div class="box">
+                        <img src="img/menu7.png">
+                        <h3>Iced Green Tea Lemonade</h3>
+                        <div class="price">$15.99 </div>
+                        <a href="#" class="btn">add to cart</a>
+                    </div>
+                  
+                </div>    
+            </div>
+                
+            </div>
+                        
+                <ul class="pagination">
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">1</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">2</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">3</a>
+                    </li>
+                    <li class="pagination-item">
+                        <a href="" class="pagination-item_link">4</a>
+                    </li>
+                </ul>        
+
+        </h1>
+    </section>
+
+    <!-- about start -->
+    <section class="about" id="about">
+        <h1 class="heading"><span>about</span> us</h1>
+
+        <div class="row">
+            <div class="image">
+                <img src="img/about.jpg" width="150" height="500">
+            </div>
+
+            <div class="content">
+                <h3>what makes our coffee special?</h3>
+                <p>fnsdfklsn</p>
+                <a href="#" class="btn">learn more</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- contact-start -->
+    <section class="contact" id="contact">
+        <h1 class="heading"><span>contact</span> us</h1>
+        <div class="row">
+            <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3917.
+            7259804969535!2d106.73889967451872!3d10.908417456746292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
+            1!3m3!1m2!1s0x3174d14575edc615%3A0x47c3f5cace0b3b2c!2sVincom%20Plaza%20D%C4%A9%20An!5e0!3m2!1svi!2s!4v1699687043948!5m2!1svi!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <form action="">
+                <h4 class=""><i class="fa-solid fa-location-dot"></i> Vincom Plaza Di An, Binh Duong</h4>
+                <h4 class=""><i class="fa-regular fa-envelope"></i> dinhquynh240703@gmail.com</h4>
+                <h4 class=""><i class="fa-solid fa-phone"></i> (+84)32465113</h4>
+            </form>
+        </div>
+    </section>
+
+    <!-- footer start -->
+    <section class="footer">
+        <div class="share">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-instagram"></a>
+            <a href="#" class="fab fa-tiktok"></a>
+        </div>
+
+        <div class="links">
+            <a href="#">home</a>
+            <a href="#menu">menu</a>
+            <a href="#about">about us</a>
+            <a href="#contact">contact</a>
+        </div>
+
+        <div class="credit">created by <span>group 7</span></div>
+    </section>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

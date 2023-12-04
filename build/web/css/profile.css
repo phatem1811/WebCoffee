@@ -1,0 +1,35 @@
+.text-success{
+    /*text-align: center;*/
+    font-size: 30px;
+    margin-left: 500px;
+}
+
+.labels, .form-control, .text-right, .profile-button{
+    font-size: 20px;
+}
+
+.btn button{
+    --bs-btn-font-size: 1.5rem;
+    --bs-btn-line-height: 1.9;
+}
+
+.text-center a{       
+    display:inline-block;
+    border:1px solid #73AD21;
+    background-color:#73AD21;
+    padding:10px 12px;
+    box-shadow:2px 2px 5px #6c6969;
+    text-decoration:none;
+    border-radius:3px;
+    color:white;
+        }
+.text-center a:hover{
+    border:1px solid #90d331;
+    background-color:#90d331;
+    text-decoration: none;
+}
+        
+.text-center a:active{
+    border:1px solid #669f15;
+    background-color:#669f15;
+}

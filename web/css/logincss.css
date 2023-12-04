@@ -1,0 +1,77 @@
+html, body{
+    width: 100%;
+    background-image: url( ../assets/header.jpg);
+}
+.box{
+    text-align: center;
+    background: #fff;
+    width: 400px;
+    height: auto;
+    padding: 25px;
+    position: absolute;
+    left: 50%; top:50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px 0px #181818;
+}
+.box h1{
+    color: #181818;
+}
+.box input[type="password"], .box input[type="text"],
+.box input[type="Email"], .box input[type="fullname"],
+.box input[type="tel"], .box input[type="address"]{
+    background: none;
+    outline: none;
+    width: 210px;
+    height: 40px;
+    border-radius: 40px;
+    padding: 0px 15px;
+    margin: 15px 0px;
+    border: solid 2px #002cff;
+    transition: 1s;
+}
+.box input[type="password"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="text"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="email"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="fullname"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="tel"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="address"]:focus{
+    width: 320px;
+    border-color: chartreuse;
+    transition: 1s;
+}
+.box input[type="submit"]{
+    background: none;
+    outline: none;
+    width: 160px;
+    height: 40px;
+    border-radius: 40px;
+    margin: 15px 0px;
+    border: solid 2px #002cff;
+    color: #181818;
+    font-size: 18px;
+    transition: 1s;
+}
+.box input[type="submit"]:hover{
+    background: chartreuse;
+    transition: 1s;
+}
