@@ -69,13 +69,15 @@
                  </tbody></table> 
                 </div> 
                 <div class="panel-footer"> 
-                 <div class="row"> 
-                  <div class="col col-xs-4">Trang 1 của 5 </div> 
-                  <div class="col col-xs-8"> 
-                   
-                  </div> 
-                 </div> 
-                </div> 
+                    <div class="clearfix">  
+                    <ul class="pagination">
+                        <c:forEach begin="1" end="${totalPages}" varStatus="loop">
+                            <li class="page-item ${loop.index == currentPage ? 'active' : ''}">
+                                <a href="<c:url value='paginguser'><c:param name='page' value='${loop.index}'/></c:url>" class="page-link">${loop.index}</a>
+                                </li>
+                        </c:forEach>
+                    </ul>
+                </div> 
                </div> 
               </div> 
              </div>

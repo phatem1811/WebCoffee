@@ -31,7 +31,7 @@ ul li{
 
 ul li a{
     display: block;
-    padding: 20px 25px;
+    padding: 20px 20px;
     font-size: 16px;
     text-decoration: none;
     text-align: center;
@@ -134,7 +134,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 7%;
+    padding: 1.5rem 3%;
     border-bottom: var(--border);
     position: fixed;
     top: 0;

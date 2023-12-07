@@ -15,6 +15,7 @@ import entity.Category;
 import entity.Product;
 import entity.User;
 import java.util.List;
+import javax.persistence.Query;
 
 public class ProductDB {
 
@@ -89,7 +90,18 @@ public class ProductDB {
         return (Product)result;
     }
         
-    
+    public static List<Product> searchByName(String productName) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        String qString = "SELECT p FROM Product p WHERE p.productName LIKE :productName";
+        TypedQuery<Product> q = em.createQuery(qString, Product.class);
+        q.setParameter("productName", "%" + productName + "%");
+        try {
+            List<Product> products = q.getResultList();
+            return products;
+        } finally {
+            em.close();
+        }
+    }
 
     public List<Product> findALL() {
         EntityManager em = DBUtil.getEmFactory().createEntityManager();
@@ -109,6 +121,33 @@ public class ProductDB {
         q.setParameter("categoryID", categoryID);
         return  q.getResultList();
 
+    } 
+     public static int getTotalProducts() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        int count = 0;
+        String qString = "SELECT COUNT(a) FROM Product a";
+        try {
+            Query query = em.createQuery(qString);
+            count = ((Number) query.getSingleResult()).intValue();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public static List<Product> getProductByPage(int page, int pageSize) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        List<Product> list = null;
+        try {
+            String qString = "SELECT a FROM Product a ORDER BY a.productID";
+            Query query = em.createQuery(qString);
+            query.setFirstResult((page - 1) * pageSize);
+            query.setMaxResults(pageSize);
+
+            list = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
     public static void main(String[] args){
          Category c =new Category();

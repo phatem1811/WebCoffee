@@ -41,7 +41,23 @@ public class ManageUserController extends HttpServlet {
         UserDB u =new UserDB();
         List<User> users = u.findALL();
         
-       
+        int page = 1;
+        int pageSize = 5; // Number of products per page
+
+        if (request.getParameter("page") != null) {
+            page = Integer.parseInt(request.getParameter("page"));
+        }
+
+        int totalUser = UserDB.getTotalUsers();
+        int totalPages = (int) Math.ceil((double) totalUser / pageSize);
+
+        List<User> list = UserDB.getUserByPage(page, pageSize);
+
+        request.setAttribute("totalUser", totalUser);
+        request.setAttribute("pageSize", pageSize);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPages", totalPages);
+
         request.setAttribute("users", users);
         request.getRequestDispatcher("admin.jsp").forward(request, response);
   }

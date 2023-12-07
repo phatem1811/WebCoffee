@@ -8,6 +8,7 @@ import javax.persistence.NamedQuery;
 import entity.User;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Query;
 
 public class UserDB {
 
@@ -138,6 +139,33 @@ public class UserDB {
         }
         
         return (User)result;
+    }
+    public static int getTotalUsers() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        int count = 0;
+        String qString = "SELECT COUNT(a) FROM User a";
+        try {
+            Query query = em.createQuery(qString);
+            count = ((Number) query.getSingleResult()).intValue();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public static List<User> getUserByPage(int page, int pageSize) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        List<User> list = null;
+        try {
+            String qString = "SELECT a FROM User a ORDER BY a.userId";
+            Query query = em.createQuery(qString);
+            query.setFirstResult((page - 1) * pageSize);
+            query.setMaxResults(pageSize);
+
+            list = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
     public static void main(String[]args){ 
        

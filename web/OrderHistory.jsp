@@ -113,9 +113,19 @@
                         về trang chủ</a>
                     
                 </div>
-            </div>
+            </div> 
         </div>
         <!-- End block content -->
+        <div  class="panel-footer">
+            <c:forEach begin="1" end="7" var="i">
+                    <ul class="pagination">   
+                    <li class="pagination-item">
+                       
+                        <a href="listproduct?index=${i}" class="pagination-item_link">${i}</a>    
+                    </li>
+                    </ul>
+        </c:forEach>
+        </div>
     </main>
 
 

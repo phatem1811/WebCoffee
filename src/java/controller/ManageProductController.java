@@ -39,15 +39,29 @@ public class ManageProductController extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         
-        ProductDB p =new ProductDB();
-        List<Product> products = p.findALL();
+//        ProductDB p =new ProductDB();
+//        List<Product> products = p.findALL();
         
-        CategoryDB c =new CategoryDB();
-        List<Category> listc = c.findALL(); 
-        
-        request.setAttribute("listc", listc);
-        request.setAttribute("products", products);
-        request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
+//        int page = 1;
+//        int pageSize = 3; // Number of products per page
+//
+//        if (request.getParameter("page") != null) {
+//            page = Integer.parseInt(request.getParameter("page"));
+//        }
+//
+//        int totalProduct = ProductDB.getTotalProducts();
+//        int totalPages = (int) Math.ceil((double) totalProduct / pageSize);
+//
+//        List<Product> list = ProductDB.getProductByPage(page, pageSize);
+//
+//        request.setAttribute("totalProduct", totalProduct);
+//        request.setAttribute("pageSize", pageSize);
+//        request.setAttribute("currentPage", page);
+//        request.setAttribute("totalPages", totalPages);
+
+//        request.setAttribute("products", products);
+        String url="/pagingproduct";
+        request.getRequestDispatcher(url).forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

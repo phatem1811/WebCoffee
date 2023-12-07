@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 84971
  */
-public class ManageOrderController extends HttpServlet {
+public class PagingnationOrderServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,12 +32,6 @@ public class ManageOrderController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        
-        OrderDB od =new OrderDB();
-        List<Order> orders = od.findALL();
-        
         int page = 1;
         int pageSize = 5; // Number of products per page
 
@@ -50,14 +44,12 @@ public class ManageOrderController extends HttpServlet {
 
         List<Order> list = OrderDB.getOrderByPage(page, pageSize);
 
-        request.setAttribute("totalOrder", totalOrder);
         request.setAttribute("pageSize", pageSize);
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
 
-        request.setAttribute("orders", orders);
-        String url="/pagingorder";
-        request.getRequestDispatcher(url).forward(request, response);
+        request.setAttribute("orders", list);
+        request.getRequestDispatcher("ManageOrder.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

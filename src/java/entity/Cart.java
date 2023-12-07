@@ -11,11 +11,7 @@ public class Cart implements Serializable {
 
     public Cart() {
         items = new ArrayList();
-
     }
-
-
-
 //    }
     public void setItems(List<Item> items) {
         this.items = items;

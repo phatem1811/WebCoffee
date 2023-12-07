@@ -4,8 +4,8 @@
  */
 package controller;
 
-import dao.OrderDB;
-import entity.Order;
+import dao.ProductDB;
+import entity.Product;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author 84971
  */
-public class ManageOrderController extends HttpServlet {
+public class PagingnationProductServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,32 +32,25 @@ public class ManageOrderController extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        
-        OrderDB od =new OrderDB();
-        List<Order> orders = od.findALL();
-        
-        int page = 1;
-        int pageSize = 5; // Number of products per page
+       int page = 1;
+        int pageSize = 3; // Number of products per page
 
         if (request.getParameter("page") != null) {
             page = Integer.parseInt(request.getParameter("page"));
         }
 
-        int totalOrder = OrderDB.getTotalOrders();
-        int totalPages = (int) Math.ceil((double) totalOrder / pageSize);
+        int totalProduct = ProductDB.getTotalProducts();
+        int totalPages = (int) Math.ceil((double) totalProduct / pageSize);
 
-        List<Order> list = OrderDB.getOrderByPage(page, pageSize);
+        List<Product> list = ProductDB.getProductByPage(page, pageSize);
 
-        request.setAttribute("totalOrder", totalOrder);
+        request.setAttribute("totalProduct", totalProduct);
         request.setAttribute("pageSize", pageSize);
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
 
-        request.setAttribute("orders", orders);
-        String url="/pagingorder";
-        request.getRequestDispatcher(url).forward(request, response);
+        request.setAttribute("products", list);
+        request.getRequestDispatcher("ManageProduct.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

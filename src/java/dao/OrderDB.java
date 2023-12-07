@@ -11,6 +11,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
+import javax.persistence.Query;
 
 
 public class OrderDB {
@@ -102,6 +103,33 @@ public class OrderDB {
         }
         
         return (Order)result;
+    }
+    public static int getTotalOrders() {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        int count = 0;
+        String qString = "SELECT COUNT(a) FROM Order a";
+        try {
+            Query query = em.createQuery(qString);
+            count = ((Number) query.getSingleResult()).intValue();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return count;
+    }
+    public static List<Order> getOrderByPage(int page, int pageSize) {
+        EntityManager em = DBUtil.getEmFactory().createEntityManager();
+        List<Order> list = null;
+        try {
+            String qString = "SELECT a FROM Order a ORDER BY a.orderId";
+            Query query = em.createQuery(qString);
+            query.setFirstResult((page - 1) * pageSize);
+            query.setMaxResults(pageSize);
+
+            list = query.getResultList();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return list;
     }
     public static void main(String[] args){
        
