@@ -18,10 +18,10 @@
                         <div class="panel-heading"> 
                             <div class="menu_admin">
                                 <ul >
-                                    <li> <a href="testjpql">Manage User</a></li>
-                                    <li> <a href="testproduct">Manage Products</a></li>
-                                    <li> <a href="manageorder">Manage Orders</a></li>
-                                    <li> <a href="loadcategoryadmin">Manage Categories</a></li>
+                                    <li> <a href="manage?action=manageuser">Manager User</a></li>
+                                    <li> <a href="manage?action=manageproduct">Manager Products</a></li>
+                                    <li> <a href="manage?action=manageorder">Manager Orders</a></li>
+                                    <li> <a href="manage?action=managecategory">Manage Categories</a></li>
                                 </ul>
                             </div>
                             <div class="row"> 
@@ -51,8 +51,8 @@
                            <c:forEach  var="o" items="${categories}" >
                                <tr > 
                                    <td align="center">
-                                        <a href="editcategory?cid=${o.categoryID}" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
-                                        <a href="deletecategory?cid=${o.categoryID}" class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        <a href="manage?action=editcategory&amp;cid=${o.categoryID}" class="btn btn-default"><em class="fa fa-pencil"></em></a> 
+                                        <a href="manage?action=deletecategory&amp;cid=${o.categoryID}" class="btn btn-danger"><em class="fa fa-trash"></em></a>
                                    </td>
                                    <td class="hidden-xs">${o.categoryID}</td>
                                    <td class="modify">${o.categoryName}</td> 
@@ -63,6 +63,7 @@
                     </table> 
                 </div> 
                 <div class="panel-footer"> 
+                <a href="home" style="font-size: 20px">Back Home</a>
                  <div class="row"> 
                   <div class="col col-xs-4"> </div> 
                   <div class="col col-xs-8"> 

@@ -12,7 +12,8 @@
 </head>
 <body>
     
-        <form method="post" action="updateuser" class="box">
+        <form method="post" action="manage" class="box">
+            <input type="hidden" name="action" value="updateuser">
             <input type="hidden" name="id" value=${user.userId} >
             <H1>Edit User</H1>
             

@@ -45,7 +45,7 @@ public class UpdateProfileController extends HttpServlet {
             String email = request.getParameter("email");
             String name = request.getParameter("name");
             String sdt = request.getParameter("sdt");
-            String address = request.getParameter("address");
+            String address = request.getParameter("diachi");
 
             user.setUsername(username);
             user.setPassword(password);

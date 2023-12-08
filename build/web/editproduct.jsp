@@ -13,7 +13,8 @@
 </head>
 <body>
     
-        <form method="post" action="updateproduct" class="box">
+        <form method="post" action="manage" class="box">
+            <input type="hidden" name="action" value="updateproduct">
             <input type="hidden" name="id" value=${product.productID} >
             <H1>Edit Product</H1>
             <label>Product Name: </label>

@@ -5,10 +5,6 @@
         <servlet-class>controller.ManageUserController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>Deletecontroller</servlet-name>
-        <servlet-class>controller.Deletecontroller</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>controller.LoginServlet</servlet-class>
     </servlet>
@@ -65,26 +61,6 @@
         <servlet-class>controller.DeleteOrderController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddProductController</servlet-name>
-        <servlet-class>controller.AddProductController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddProductServlet</servlet-name>
-        <servlet-class>controller.AddProductServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateProductController</servlet-name>
-        <servlet-class>controller.UpdateProductController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteProduct</servlet-name>
-        <servlet-class>controller.DeleteProduct</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditProductController</servlet-name>
-        <servlet-class>controller.EditProductController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>ManageProduct</servlet-name>
         <servlet-class>controller.ManageProductController</servlet-class>
     </servlet>
@@ -95,22 +71,6 @@
     <servlet>
         <servlet-name>LoadCategoryAdmin</servlet-name>
         <servlet-class>controller.LoadCategoryAdmin</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>AddCategoryController</servlet-name>
-        <servlet-class>controller.AddCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>DeleteCategoryController</servlet-name>
-        <servlet-class>controller.DeleteCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>EditCategoryController</servlet-name>
-        <servlet-class>controller.EditCategoryController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>UpdateCategoryController</servlet-name>
-        <servlet-class>controller.UpdateCategoryController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>PagingnationServlet</servlet-name>
@@ -128,13 +88,13 @@
         <servlet-name>PagingnationProductServlet</servlet-name>
         <servlet-class>controller.PagingnationProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ManageServlet</servlet-name>
+        <servlet-class>controller.ManageServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>testJPQL</servlet-name>
         <url-pattern>/testjpql</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>Deletecontroller</servlet-name>
-        <url-pattern>/delete</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
@@ -193,26 +153,6 @@
         <url-pattern>/deleteorder</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>AddProductController</servlet-name>
-        <url-pattern>/addproduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddProductServlet</servlet-name>
-        <url-pattern>/add</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateProductController</servlet-name>
-        <url-pattern>/updateproduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteProduct</servlet-name>
-        <url-pattern>/deleteproduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditProductController</servlet-name>
-        <url-pattern>/editproduct</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>ManageProduct</servlet-name>
         <url-pattern>/manageproduct</url-pattern>
     </servlet-mapping>
@@ -223,22 +163,6 @@
     <servlet-mapping>
         <servlet-name>LoadCategoryAdmin</servlet-name>
         <url-pattern>/loadcategoryadmin</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddCategoryController</servlet-name>
-        <url-pattern>/addcategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>DeleteCategoryController</servlet-name>
-        <url-pattern>/deletecategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>EditCategoryController</servlet-name>
-        <url-pattern>/editcategory</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>UpdateCategoryController</servlet-name>
-        <url-pattern>/updatecategory</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PagingnationServlet</servlet-name>
@@ -255,6 +179,10 @@
     <servlet-mapping>
         <servlet-name>PagingnationProductServlet</servlet-name>
         <url-pattern>/pagingproduct</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ManageServlet</servlet-name>
+        <url-pattern>/manage</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -20,20 +20,20 @@
                     <div class="panel-heading"> 
                         <div class="menu_admin">
                             <ul >
-                                <li> <a href="testjpql">Manager User</a></li>
-                                <li> <a href="testproduct">Manager Products</a></li>
-                                <li> <a href="manageorder">Manager Orders</a></li>
-                                <li> <a href="loadcategoryadmin">Manage Categories</a></li>
+                                <li> <a href="manage?action=manageuser">Manager User</a></li>
+                                <li> <a href="manage?action=manageproduct">Manager Products</a></li>
+                                <li> <a href="manage?action=manageorder">Manager Orders</a></li>
+                                <li> <a href="manage?action=managecategory">Manage Categories</a></li>
                             </ul>
                         </div>
 
                         <div class="row"> 
                             <div class="col col-xs-6"> 
-                                <h3 class="panel-title">Quản lí Product</h3> 
+                                <h3 class="panel-title">Manage Product</h3> 
                             </div> 
 
                             <div class="col col-xs-6 text-right"> 
-                                <li><a href="addproduct" type="button" class="btn btn-sm btn-primary btn-create">Add Product</a></li>                                
+                                <li><a href="manage?action=loadcateforpro" type="button" class="btn btn-sm btn-primary btn-create">ADD</a></li>                                
                             </div> 
                         </div> 
                     </div> 
@@ -54,8 +54,9 @@
                             <tbody>
                                 <c:forEach  var="p" items="${products}" >
                                     <tr > 
-                                        <td align="center"><a href="editproduct?pid=${p.getProductID()}" class="btn btn-default"><em class="fa fa-pencil"></em></a>
-                                            <a href="deleteproduct?pid=${p.getProductID()}" class="btn btn-danger"><em class="fa fa-trash"></em></a>
+                                        <td align="center">
+                                            <a href="manage?action=editproduct&amp;pid=${p.getProductID()}" class="btn btn-default"><em class="fa fa-pencil"></em></a>
+                                            <a href="manage?action=deleteproduct&amp;pid=${p.getProductID()}" class="btn btn-danger"><em class="fa fa-trash"></em></a>
                                         <td class="hidden-xs">${p.getProductID()}</td> 
                                         <td class="modify">${p.getProductName()}</td> 
                                         <td><img class="img" src="${p.getImg()}" alt="alt"/></td>
@@ -68,15 +69,16 @@
                             </tbody></table> 
                     </div> 
                     <div class="panel-footer"> 
+                        <a href="home" style="font-size: 20px">Back Home</a>
                         <div class="clearfix">  
-                    <ul class="pagination">
-                        <c:forEach begin="1" end="${totalPages}" varStatus="loop">
-                            <li class="page-item ${loop.index == currentPage ? 'active' : ''}">
-                                <a href="<c:url value='pagingproduct'><c:param name='page' value='${loop.index}'/></c:url>" class="page-link">${loop.index}</a>
-                            </li>
-                        </c:forEach>
-                    </ul>
-                </div> 
+                            <ul class="pagination">
+                                <c:forEach begin="1" end="${totalPages}" varStatus="loop">
+                                    <li class="page-item ${loop.index == currentPage ? 'active' : ''}">
+                                        <a href="<c:url value='manage?action=manageproduct'><c:param name='page' value='${loop.index}'/></c:url>" class="page-link">${loop.index}</a>
+                                        </li>
+                                </c:forEach>
+                            </ul>
+                        </div> 
                     </div> 
                 </div> 
             </div> 

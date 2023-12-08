@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/src/java/controller/CheckoutController.java</file>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/Profile.jsp</file>
             <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/ManageOrder.jsp</file>
-            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/ManageProduct.jsp</file>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/src/java/controller/PurchaseController.java</file>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/home.jsp</file>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/OrderHistory.jsp</file>
+            <file>file:/C:/Users/84971/Documents/NetBeansProjects/webcoffee/web/WEB-INF/web.xml</file>
         </group>
     </open-files>
 </project-private>

@@ -12,7 +12,8 @@
 </head>
 <body>
     
-        <form method="post" action="updatecategory" class="box">
+        <form method="post" action="manage" class="box">
+            <input type="hidden" name="action" value="updatecategory"> 
             <input type="hidden" name="cid" value=${category.categoryID}>
             <H1>Edit Category</H1>
             <input type="text" name="categoryName" value=${category.categoryName}>    

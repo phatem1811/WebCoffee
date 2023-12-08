@@ -13,7 +13,8 @@
 </head>
 <body>
     
-        <form method="post" action="addproductservlet" class="box">
+        <form method="post" action="manage" class="box">
+            <input type="hidden" name="action" value="addproduct" >
             <H1>Edit Product</H1>
             <label>Product Name: </label>
             <input type="text" name="productname" >

@@ -31,39 +31,36 @@ public class LoginServlet extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       response.setContentType("text/html;charset=UTF-8");
+        response.setContentType("text/html;charset=UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
-        
+
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
-        UserDB user =new UserDB();
-        User u = user.findUserByUsername(username); 
-        if ( u != null) {
+        UserDB user = new UserDB();
+        User u = user.findUserByUsername(username);
+        if (u != null) {
             boolean equals = u.getPassword().equals(password);
-            
+
             if (equals == true) {
-                if(u.getRole()==1) {
-                    String url = "/testjpql";
+                if (u.getRole() == 1) {
+                    String url = "/manage";
                     request.getRequestDispatcher(url).forward(request, response);
-                }
-                else {
+                } else {
                     HttpSession session = request.getSession();
-                    session.setAttribute ("acc",u);
+                    session.setAttribute("acc", u);
                     request.getRequestDispatcher("/home").forward(request, response);
                 }
-            }
-            else {
+            } else {
                 request.setAttribute("message", "wrong password");
-                request.getRequestDispatcher("login.jsp").forward(request, response); 
+                request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         }
-            request.setAttribute("message", "wrong user ");
-            request.getRequestDispatcher("login.jsp").forward(request, response);
-       
-        
+        request.setAttribute("message", "wrong user ");
+        request.getRequestDispatcher("login.jsp").forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

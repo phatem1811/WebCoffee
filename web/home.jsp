@@ -16,18 +16,18 @@
     <body>
         <!-- start header -->
         <header class="header">
-            <a href="#" class="logo">
+            <a href="home" class="logo">
                 <img src="img/logo.jpg" width="150" height="60">
             </a>
 
             <nav class="navbar">
                 <ul>
-                    <li><a href="#home">home</a></li>
+                    <li><a href="home">home</a></li>
                     <li><a href="#menu">menu</a>
                         <ul class="dropdown">
                             <c:forEach  var="o" items="${listc}" >
                                 <li><a href="category?cid=${o.categoryID}#menu">${o.categoryName}</a></li>    
-                            </c:forEach>
+                                </c:forEach>
                         </ul>
                     </li>
 
@@ -48,25 +48,25 @@
                 </ul>
             </nav>
 
+
+
+
+
+            <form action="search#menu" class="search" method="post">
+                <span class="icon-large"><i class="ri-search-line"></i></span>
+                <input oninput="searchByName(this)" type="search" value="${txtS}"  name="txt" placeholder="Search for products" 
+                       style="height: 25px; border-radius: 7px;padding-right: 20px; ">
+                <button type="submit" name="action" style="background-color: transparent; color: white">  <div class="fas fa-search" id="seach-btn"
+                                          ></div></button>                
+            </form>
+
             <div class="icons">
                 <c:set var="size" value="${sessionScope.size}" />
                 <a href="cart.jsp"> <div class="fas fa-shopping-cart" id="cart-btn"> </div>
-                    <p style="color: white; margin-left: 30px; margin-top: 10px">my bag (${size}) items</p>
+                    <p style="color: white; margin-left: 30px; margin-top: 10px; ">my bag (${size}) items</p>
                 </a>
-
-
                 <div class="fas fa-bars" id="menu-btn"></div>
             </div>
-
-            
-
-                <form action="search#menu" class="search" method="post">
-                    <span class="icon-large"><i class="ri-search-line"></i></span>
-                    <input oninput="searchByName(this)" type="search" value="${txtS}"  name="txt" placeholder="Search for products">
-                    <button type="submit" name="action">  <div class="fas fa-search" id="seach-btn"></div></button>
-                    
-                </form>
-
             <!-- <div class="cart-item-container">
                 <div class="cart-item">
                     <span class="fas fa-times"></span>
@@ -90,6 +90,7 @@
 
         <!-- menu start -->
         <section class="menu" id="menu">
+            <p class="text-danger" style="color: white">${searchmessage}</p>
             <h1 class="heading">
                 <div class="box-container">
                     <c:forEach  var="o" items="${listp}" >
@@ -117,7 +118,10 @@
 
                 <div class="content">
                     <h3>what makes our coffee special?</h3>
-                    <p>fnsdfklsn</p>
+                    <p>Coffee beans</p>
+                    <p>Freshness</p>
+                    <p>Processing Method</p>
+                    <p>Artisanal or Specialty Coffee</p>
                     <a href="#" class="btn">learn more</a>
                 </div>
             </div>

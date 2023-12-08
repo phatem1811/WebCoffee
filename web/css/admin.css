@@ -97,6 +97,7 @@ li{
     height: 30px;
     font-size: 20px;
     color: brown;
+    margin-top: 4rem;
 }
 .panel-table .panel-body .table-bordered > tbody > tr > td {   
     line-height: 34px;

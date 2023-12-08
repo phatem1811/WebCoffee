@@ -180,17 +180,14 @@ public class UserDB {
 //     System.out.println(a.getPassword());
 ////////        
 //////////       
-          User u =new User();
-          u.setName("Huỳnh Tiến Phát");
-          u.setUsername("admin");
-          u.setPassword("123456");
-          u.setEmail("huynhtienphat1811@gmail.com");
-          u.setSdt("012345678");
+       
+          User u= UserDB.findUserByUsername("admin");
           
-          u.setDiachi("Long An");
-          u.setRole(1);
-          UserDB.insert(u);
-          System.out.println(u.getUsername());
+          u.setPassword("123");
+       
+
+          UserDB.update(u);
+          System.out.println(u.getPassword());
 //       UserDB u =new UserDB();
 //       User a = u.findUserById(2);
 //       a.setName("Quốc Kha");
