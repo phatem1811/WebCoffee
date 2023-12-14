@@ -3,6 +3,7 @@ package entity;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,33 +13,37 @@ import javax.persistence.Table;
 
 /**
  *
- * @author 84971  IDENTITY
+ * @author 84971 IDENTITY
  */
-
 @Entity
-@Table(name="user")  
+@Table(name = "user")
 
 public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
     private int userId;
+    @Column(name = "username")
     private String username;
+    @Column(name = "password")
     private String password;
+    @Column(name = "name")
     private String name;
+    @Column(name = "email")
     private String email;
+    @Column(name = "sdt")
     private String sdt;
+    @Column(name = "diachi")
     private String diachi;
-     private int role = 0 ;
+    @Column(name = "role")
+    private int role = 0;
 
-   
-     
     @OneToMany(mappedBy = "user")
     private List<Order> orders;
-   
 
     public User() {
-        
+
     }
 
     public User(int userId, String username, String password, String name, String email, String sdt, String diachi) {
@@ -50,7 +55,7 @@ public class User implements Serializable {
         this.sdt = sdt;
         this.diachi = diachi;
     }
-    
+
     public int getRole() {
         return role;
     }
@@ -75,9 +80,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-   
-
-    
     public int getUserId() {
         return userId;
     }
@@ -116,8 +118,9 @@ public class User implements Serializable {
 
     public void setDiachi(String diachi) {
         this.diachi = diachi;
-    }    
-     public List<Order> getOrders() {
+    }
+
+    public List<Order> getOrders() {
         return orders;
     }
 

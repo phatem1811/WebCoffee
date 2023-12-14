@@ -181,12 +181,18 @@ public class UserDB {
 ////////        
 //////////       
        
-          User u= UserDB.findUserByUsername("admin");
-          
-          u.setPassword("123");
+         User u = new User();
+         u.setUsername("tienphat");
+         u.setName("huỳnh Tiến Phát");
+         u.setPassword("123456");
+         u.setEmail("huynhtienphat@gmail.com");
+         u.setDiachi("Long AN");
+         u.setSdt("012345698");
+         u.setRole(0);
+         UserDB.insert(u);
        
 
-          UserDB.update(u);
+          
           System.out.println(u.getPassword());
 //       UserDB u =new UserDB();
 //       User a = u.findUserById(2);
